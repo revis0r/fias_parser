@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fias/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "fias_importer"
+  gem.name          = "fias_parser"
   gem.version       = Kladr::VERSION
   gem.authors       = ["Ivan Goncharov"]
   gem.email         = ["revis0r.mob@gmail.com"]

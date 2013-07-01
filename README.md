@@ -8,7 +8,7 @@ http://fias.nalog.ru/Public/DownloadPage.aspx
 
 Add this line to your application's Gemfile:
 
-    gem 'fias', git: 'git@github.com:revis0r/fias_parser.git'
+    gem 'fias_parser', git: 'git@github.com:revis0r/fias_parser.git'
 
 And then execute:
 
