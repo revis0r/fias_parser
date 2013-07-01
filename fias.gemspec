@@ -5,7 +5,7 @@ require 'fias/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "fias_parser"
-  gem.version       = Kladr::VERSION
+  gem.version       = Fias::VERSION
   gem.authors       = ["Ivan Goncharov"]
   gem.email         = ["revis0r.mob@gmail.com"]
   gem.description   = %q{TODO: Write a gem description}
