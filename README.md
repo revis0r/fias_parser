@@ -1,24 +1,30 @@
-# Kladr
+# Fias parser
 
-TODO: Write a gem description
+Парсер базы ФИАС.
+http://fias.nalog.ru/Public/DownloadPage.aspx
+Гем в стадии разработки.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'kladr'
+    gem 'fias', git: 'git@github.com:revis0r/fias_parser.git'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install kladr
 
 ## Usage
 
-TODO: Write usage instructions here
+    importer = Fias::Importer.new do |settings|
+      settings.addr_object Fias::AddrObj, :aoguid => :ao_guid
+      settings.house Fias::House, :aoguid => :ao_guid
+      settings.base 'spec/base/'
+    end
+    importer.import_house
+    importer.import_addrobj
+
 
 ## Contributing
 
