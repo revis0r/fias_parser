@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'rspec'
-require './lib/fias'
-require 'fias'
+require './lib/fias_parser'
+require 'fias_parser'
 require File.realpath('spec/models') + '/base_obj.rb'
 Dir[File.realpath('spec/models') + '/*.rb'].each { |m| require m }
 

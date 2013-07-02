@@ -1,4 +1,4 @@
-class Fias::BaseObj
+class FiasParser::BaseObj
 
   def initialize(attrs)
     @attrs = attrs

@@ -1,4 +1,4 @@
-class Fias::House < Fias::BaseObj
+class FiasParser::House < FiasParser::BaseObj
   attr_reader :houseid, :houseguid, :ao_guid, :housenum, :postalcode
 
   class << self

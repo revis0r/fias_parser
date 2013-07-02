@@ -1,9 +1,9 @@
 # encoding: utf-8
 
-require "fias/version"
+require "fias_parser/version"
 require 'nokogiri'
 
-module Fias
+module FiasParser
   class BadSettings < ArgumentError; end
 
   class Importer

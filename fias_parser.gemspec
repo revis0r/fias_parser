@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fias/version'
+require 'fias_parser/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "fias_parser"
-  gem.version       = Fias::VERSION
+  gem.version       = FiasParser::VERSION
   gem.authors       = ["Ivan Goncharov"]
   gem.email         = ["revis0r.mob@gmail.com"]
   gem.description   = %q{Fias xml parset}
