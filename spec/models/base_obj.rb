@@ -1,6 +1,10 @@
 class Fias::BaseObj
 
   def initialize(attrs)
+    @attrs = attrs
+    if (attrs.keys - self.class.attribute_names).length > 0
+      raise "Unknown keys"
+    end
   end
 
   def save
@@ -17,6 +21,10 @@ class Fias::BaseObj
 
     def count=(cnt)
       @count = cnt
+    end
+
+    def attribute_names
+      []
     end
   end
 end

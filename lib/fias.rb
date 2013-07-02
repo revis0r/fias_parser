@@ -83,7 +83,7 @@ module Fias
         end
         attry["#{attr_name}"] = "#{attrib[1]}"
       end
-      obj = @klass.new attry
+      obj = @klass.new(attry.slice(*@klass.attribute_names))
       obj.save
     end
   end

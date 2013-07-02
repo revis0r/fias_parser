@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = Fias::VERSION
   gem.authors       = ["Ivan Goncharov"]
   gem.email         = ["revis0r.mob@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
+  gem.description   = %q{Fias xml parset}
   gem.summary       = %q{TODO: Write a gem summary}
   gem.homepage      = ""
 
