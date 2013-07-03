@@ -18,12 +18,23 @@ And then execute:
 ## Usage
 
     importer = FiasParser::Importer.new do |settings|
-      settings.addr_object AddrObj, :aoguid => :ao_guid
-      settings.house House, :aoguid => :ao_guid
+      settings.addr_object FiasParser::AddrObj, :aoguid => :ao_guid
+      settings.house FiasParser::House, :aoguid => :ao_guid
       settings.base 'spec/base/'
+      settings.set_batch_size 10
     end
-    importer.import_house
-    importer.import_addrobj
+
+    importer.import_addrobj do |batch|
+      batch.each do |obj|
+        AddrObj.create! obj
+      end
+    end
+
+    importer.import_house do |batch|
+      batch.each do |obj|
+        House.create! obj
+      end
+    end
 
 
 ## Contributing

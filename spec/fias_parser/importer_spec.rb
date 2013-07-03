@@ -18,25 +18,30 @@ describe FiasParser::Importer do
     importer.should be_an_instance_of FiasParser::Importer
   end
 
-  it "should be equal 15" do
+  it "Count of objects in test base should be equal 14" do
     importer = FiasParser::Importer.new do |settings|
       settings.addr_object FiasParser::AddrObj, :aoguid => :ao_guid
       settings.house FiasParser::House, :aoguid => :ao_guid
       settings.base 'spec/base/'
+      settings.set_batch_size 10
     end
-    importer.import_addrobj
-    # puts "Imported: #{FiasParser::AddrObj.count}"
-    FiasParser::AddrObj.count.to_i.should be_equal 15
+    size = 0
+    importer.import_addrobj do |batch|
+      size += batch.size
+    end
+    size.should be_equal 10
   end
 
-  it "should be greaten than zero" do
+  it "Count of houses in testbase should be greaten than zero" do
     importer = FiasParser::Importer.new do |settings|
       settings.addr_object FiasParser::AddrObj, :aoguid => :ao_guid
       settings.house FiasParser::House, :aoguid => :ao_guid
       settings.base 'spec/base/'
     end
-    importer.import_house
-    # puts "Imported: #{FiasParser::House.count}"
-    FiasParser::House.count.to_i.should be_equal 25
+    size = 0
+    importer.import_house do |batch|
+      size += batch.size
+    end
+    size.should be_equal 24
   end
 end
