@@ -14,7 +14,7 @@ module FiasParser
     end
 
     def import_addrobj(&block)
-      file = Dir["#{@settings.base_path}/*"].grep(/as_addrobj/i).first
+      file = Dir["#{@settings.base_path}/*"].grep(/as_addrobj_/i).first
       if File.exists?(file)
         parser = Nokogiri::XML::SAX::Parser.new FiasDocument.new('Object', @settings.addr_object_class, @settings, block)
         parser.parse(File.open(file))
@@ -25,7 +25,7 @@ module FiasParser
     end
 
     def import_house(&block)
-      file = Dir["#{@settings.base_path}/*"].grep(/as_house/i).first
+      file = Dir["#{@settings.base_path}/*"].grep(/as_house_/i).first
       if File.exists?(file)
         parser = Nokogiri::XML::SAX::Parser.new FiasDocument.new('House', @settings.house_class, @settings, block)
         parser.parse(File.open(file))
@@ -91,7 +91,7 @@ module FiasParser
         end
         attry["#{attr_name}"] = "#{attrib[1]}"
       end
-      return if attry['currstatus'] == '1'
+      return if !attry['currstatus'].nil? && attry['currstatus'].to_s != '0'
       @batch.push attry.slice(*@klass.attribute_names)
       if @batch.size >= @settings.batch_size
         @block.call @batch
