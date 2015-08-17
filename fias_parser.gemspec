@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = FiasParser::VERSION
   gem.authors       = ["Ivan Goncharov"]
   gem.email         = ["revis0r.mob@gmail.com"]
-  gem.description   = %q{Fias xml parset}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Fias xml parser}
+  gem.summary       = %q{Parser for FIAS}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
